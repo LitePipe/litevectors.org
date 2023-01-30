@@ -1,2 +1,2 @@
 # litevectors.org
-LiteVectors Binary Format
+LiteVectors Binary Serialization Format Website
