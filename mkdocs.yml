@@ -2,11 +2,13 @@ site_name: LiteVectors
 site_url: https://litevectors.org
 site_description: Lightweight binary serialization format
 # copyright: LitePipe LLC
+# repo_url: https://github.com/LitePipe/litevectors.org
+# repo_name: LitePipe/litevectors
 markdown_extensions:
+  - pymdownx.snippets
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
   - pymdownx.superfences
 theme:
   name: material
@@ -17,6 +19,8 @@ theme:
     - navigation.instant
     #- navigation.footer
     - navigation.tabs
+    - navigation.tabs.sticky
+    - toc.integrate
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
