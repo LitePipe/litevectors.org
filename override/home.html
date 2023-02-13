@@ -1,0 +1,284 @@
+
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %}
+
+{% block tabs %}
+{{ super() }}
+
+<style>
+
+    .md-main {
+        flex-grow: 0
+    }
+
+    .md-main__inner {
+        display: flex;
+        height: 100%;
+    }
+
+    .tx-container {
+        padding-top: .0rem;
+        background: linear-gradient(to bottom, var(--md-primary-fg-color), #435152 99%, var(--md-default-bg-color) 99%)
+    }
+
+    .tx-hero {
+        margin: 32px 2.8rem;
+        color: var(--md-primary-bg-color);
+        justify-content: center;
+    }
+
+    .tx-hero h1 {
+        font-size: 3em;
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 400
+    }
+
+    .tx-hero p {
+        font-size: 1.2em;
+    }
+
+    .tx-hero__content {
+        padding-bottom: 1rem;
+        margin: 0 auto;
+    }
+
+    .tx-hero__image{
+        width:17rem;
+        height:17rem;
+        order:1;
+        padding-right: 2.5rem;
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: #435152;
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: #FDE343;
+        color: #435152;
+        border-color:  #FDE343;
+    }
+
+    .section-container h1{
+        text-align: center;
+        margin-top: 1.4em;
+    }
+
+    .feature-item h2 svg {
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .top-hr {
+        margin-top: 42px;
+    }
+
+    .feature-item {
+        color: var(--md-default-fg-color);
+        fill: var(--md-default-fg-color);
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word;
+        background: var(--md-code-bg-color);
+        margin: 5px;
+    }
+
+    .feature-item h2 {
+        font-weight: 300;
+        font-size: 26px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: inherit;
+    }
+
+    .feature-item p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        margin: 0 0 10px;
+        display: block;
+    }
+
+    @media screen and (max-width:30em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+
+        .tx-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tx-hero__content {
+            max-width: 22rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            margin-left: 1.0rem;
+            margin-right: 4.0rem;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 0;
+        }
+    }
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
+    }
+
+</style>
+
+<!-- Title and Fast Links -->
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+        <!-- <div class="tx-hero__image">
+          <img src="assets/product-layers.png" draggable="false">
+        </div> -->
+        <div class="tx-hero__content">
+          <h1> LiteVectors </h1>
+          <p>A modern, lightweight binary serialization format</p>
+          <p>Small. Fast. Easy. Pick any three.</p>
+
+           <a href="../spec/" title="Specification" class="md-button md-button--primary">
+                Read the Spec
+            </a>
+            <a href="../implementations/" title="Implementations" class="md-button md-button--primary">
+                Find an Implementation
+            </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Descriptions -->
+<section class="section-container md-typeset">
+    <h1>Communicate Clearly</h1>
+    <div class="top-hr">
+        <div class="feature-item">
+            <h2>
+                <span class="twemoji">
+                    {% include ".icons/material/feather.svg" %} 
+                </span>
+                Featherweight
+            </h2>
+            <p>16 primitive type codes: nil, struct, list, end, string, 
+                boolean uint8, uint16, uint32, uint64, int8, int16, int32, 
+                int64, float32, float64.</p>
+        </div>
+    
+        <div class="feature-item">
+            <h2>
+                <span class="twemoji">
+                    {% include ".icons/material/code-json.svg" %} 
+                </span>
+                Simple Data Model
+            </h2>
+            <p>A JSON compatible data model with objects and lists combined with the performance of native arrays of primitives.</p>
+        </div> 
+    
+        <div class="feature-item">
+            <h2>
+                <span class="twemoji">
+                    {% include ".icons/material/speedometer.svg" %} 
+                </span>
+                Fast
+            </h2>
+            <p>Simpler encoding for faster reading and writing. From 2x to an order of magnitude speed gain over JSON, depending on the workload.</p>
+        </div>
+    
+    </div>
+    
+    <div class="top-hr">
+        <div class="feature-item">
+            <h2>
+                <span class="twemoji">
+                    {% include ".icons/material/code-array.svg" %} 
+                </span>
+                Native Vectors
+            </h2>
+            <p>Primitive vectors are standard, contiguous, little-endian arrays. Most vectors can be written or read with zero-copy operations.</p>
+        </div>
+        <div class="feature-item">
+            <h2>
+                <span class="twemoji">
+                    {% include ".icons/material/hexadecimal.svg" %} 
+                </span>
+                Readable
+            </h2>
+            <p>A regular type and size tag format for hexadecimal data readable by mortals.</p>
+        </div>
+    
+        <div class="feature-item">
+            <h2>
+                <span class="twemoji">
+                    {% include ".icons/material/vector-combine.svg" %} 
+                </span>
+                Schemaless
+            </h2>
+            <p>Can be serialized and deserialized without a schema. Schema support (on the roadmap) for code generation and type verification.</p>
+        </div>
+    
+    </div>
+</section>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
