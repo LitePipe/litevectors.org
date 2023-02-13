@@ -20,4 +20,4 @@ The current set of _positive_ test vectors: [litevectors_positive.txt](https://r
 
 The current set of _negative_ test vectors are [litevectors_negative.txt](https://raw.githubusercontent.com/LitePipe/ltvgo/main/testvectors/litevectors_negative.txt).
 
-If you encounter an error that you think could have been caught with a good test vector, submit an [issue](https://github.com/LitePipe/litevectors.org/issues) - and let's make everybody's parsers better.
+If you encounter an error that you think could have been caught with a good test vector, submit an [issue](https://github.com/LitePipe/litevectors.org/issues) - and let's make everyone's parsers better.
